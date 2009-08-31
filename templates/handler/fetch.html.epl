@@ -1,0 +1,62 @@
+% my $c = shift;
+% my $name = $c->stash( 'post_name' ) || 'Unknown';
+% my $post_id = $c->stash( 'post_id' ) || '0';
+% my $syntax = $c->stash( 'post_syntax' ) || 'Unknown';
+% my $date = $c->stash( 'post_timestamp' ) || 'Unknown';
+% my $title = $c->stash( 'post_title' ) || 'Unknown';
+% my $post_html = $c->stash( 'post_html' ) || 'Failed to load paste';
+% my $lines = $c->stash( 'post_lines' ) || 1;
+<style type="text/css">
+    .pastebit span:hover {
+        background-color: #CCCCCC;
+    }
+</style>
+<div style="padding: 10px 15px 10px 15px;" class="x-panel-mc">
+        <div id='topbar' style="padding: 5px; font-weight: normal;" class="x-panel-header">
+        <div style="float: right; padding-right: 5px;">
+        Syntax: <b><%= $syntax %></b>,
+            
+                pasted by <b><%= $name %></b>,
+        
+            on <b><%= $date %></b>
+            
+        </div>
+        <div id="paste-title">
+            
+              Title: <b><%= $title %></b>
+            
+        </div>
+                <div>
+          <a href="/#<%= $post_id %>">Direct Paste Link</a>
+          |
+                  <a href="/<%= $post_id %>/raw/">Download Paste</a>
+                  (<a target="_new" href="/<%= $post_id %>/raw/popup/">Popup</a>)
+                </div>
+        </div>  
+
+<div class="x-panel-bwrap">
+    <div class="x-panel-ml">
+    <div class="x-panel-mr">
+        <div class="x-panel-mc">
+        <div class="x-panel-body">
+            <div id="paste-container" style="height: auto; overflow: auto; scroll:auto;" class="x-form-text">
+% my $linepad = length( "$lines" );
+            <table class="pastebittable"><tr><td class="linenos"><pre><% for ( my $i = 1; $i <= $lines; $i+=2 ) { %>
+<%= ' ' x ( $linepad - length( $i ) ) %><%= $i %><% if ( $i < $lines ) { %>
+<span class="special"><%= ' ' x ( $linepad - length( $i+1 ) ) %><%= $i+1 %></span><% } } %></pre></td><td class="code"><div class="pastebit"><pre><%= $post_html %></pre></div>
+</td></tr></table>
+            </div>
+        </div>
+        </div>
+    </div>
+    </div>
+    <div class="x-panel-bl x-panel-nofooter">
+    <div class="x-panel-br">
+        <div class="x-panel-bc"/>
+            </div>
+    </div>
+    </div>
+</div>
+
+</div>
+

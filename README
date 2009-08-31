@@ -8,3 +8,14 @@ http://github.com/kraih/mojo/
 Forked from Ext Paste
 http://www.extpaste.com/
 (python + django)
+
+Requirements:
+
+Mojo
+Syntax::Highlight::Engine::Kate
+DBI
+DBIx::Simple
+Sqlite
+
+Quick Start:
+script/mojo_paste daemon

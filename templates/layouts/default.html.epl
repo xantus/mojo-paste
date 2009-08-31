@@ -1,0 +1,150 @@
+% my $c = shift;
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+<title>Mojo Paste</title>
+<link rel="stylesheet" type="text/css" href="/media/ext-2.0/resources/css/ext-all.css" />
+<link rel="stylesheet" type="text/css" href="/media/ext-2.0/docs/resources/docs.css" />
+
+<style type="text/css">
+#info .x-panel {
+    margin-bottom:3px;
+    margin-right:0;
+}
+#info .x-panel-body {
+    border:0 none;
+}
+#info .x-panel-body li {
+    margin:3px;     
+}
+#info .x-panel-body li img {
+    width:16px;
+    height:16px;
+    vertical-align:middle;
+    margin-right:2px;
+    margin-bottom:2px;
+}
+#info .x-panel-body li a {
+    text-decoration:none;
+    color:#3764A0;
+}
+#info .x-plain-body {
+    padding: 3px 0 0 5px;
+}
+.icon-about {
+    background-image: url(/media/extpaste/images/icon-info.gif) !important;
+    background-repeat: no-repeat;
+}
+.icon-comment {
+    background-image: url(/media/extpaste/images/icon-question.gif) !important;
+    background-repeat: no-repeat;
+}
+.rpad5 {
+    padding-right: 5px;
+}
+.paste .x-panel-body {
+    background-color: #DFE8F6 !important;
+}
+.pastebittable {
+    width: 100%;
+}
+.pastebittable .linenos {
+    width: 25px;
+}
+.pastebittable .linenos pre {
+    border-right: 1px dotted grey;
+    padding-right: 5px;
+}
+.pastebittable .linenos pre .special {
+    font-weight: bold;
+}
+.pastebittable .code {
+    width: 100%;
+}
+.pastebittable .code div.backdrop:hover {
+    background-color: #eee;
+}
+.pastebittable .code div.backdrop span:hover {
+    background-color: #ccc;
+}
+.paste-box {
+    position: static;
+    visibility: visible;
+    display: block;
+    left: auto;
+    top: auto;
+    z-index: auto;
+}
+.paste-container {
+    padding: 5px !important;
+    height: auto !important;
+    overflow: auto !important;
+}
+.backdrop {
+    padding-left: 5px;
+    position: relative;
+}
+.pastebittable .comment-box {
+    position: relative;
+    text-align: center;
+    z-index: 999;
+}
+.pastebittable .comment-box:hover {
+    background-color: transparent;
+}
+.pastebittable .comment-indicator {
+    position: absolute;
+    display: inline;
+    background-image: url(/media/extpaste/images/comment-active.png);
+    left: -20px;
+    width: 25px;
+    height: 25px;
+    top: -15px;
+}
+</style>
+</head>
+<body scroll="no" id="docs">
+
+<div id="loading-mask"></div>
+<div id="loading">
+    <div class="loading-indicator"><img src="/media/img/progress_bar.gif" width="190" height="14" align="absmiddle" /><br/>Loading Mojo Paste...</div>
+</div>
+
+<script type="text/javascript" src="/media/ext-2.0/adapter/ext/ext-base.js"></script>
+<script type="text/javascript" src="/media/ext-2.0/ext-all.js"></script>
+<script type="text/javascript" src="/media/extpaste/TabCloseMenu.js"></script>
+<script type="text/javascript" src="/media/extpaste/extpaste.js"></script>
+
+<div id="header">
+    <a href="http://extjs.com" style="float:right;margin-right:10px;"><img src="/media/extpaste/images/extjs2.png" style="padding-top: 4px; width:86px;height:18px;"/></a>
+    <div class="api-title"><b>Mojo Paste</b></div>
+</div>
+
+<div id="main"></div>
+
+<ul id="new-paste-panel" class="x-hidden">
+    <li>
+    <img src="/media/extpaste/images/edit.gif" class="icon-show-all"/>
+    <a id="new-post" class="new-post" href="#">New Paste</a>
+    </li>
+</ul>
+<ul id="recent-paste-panel" class="x-hidden">
+</ul>
+
+<div id="news-panel" class="x-hidden">
+    Welcome to Mojo Paste
+</div>
+<div id="update-panel" class="x-hidden">
+<em>Changelog:</em>
+<ul>
+<li>Aug 7, 2009 - First release</li>
+</ul>
+</div>
+<div id="about-panel" class="x-hidden">
+Mojo Paste
+</div>
+
+<%= $c->render_inner %>
+
+</body>
+</html>

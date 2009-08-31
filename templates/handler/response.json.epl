@@ -1,0 +1,3 @@
+% my $c = shift;
+% use JSON;
+<%= to_json( $c->stash( 'json_out' ) || [] ) %>

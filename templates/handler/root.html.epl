@@ -1,0 +1,4 @@
+% my $c = shift;
+% $c->stash( layout => 'default' );
+
+blah

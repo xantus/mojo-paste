@@ -1,0 +1,10 @@
+
+BODY { font-family: monospace; font-size: 11pt; margin: 1em; }
+P:hover { background-color: #efefef; }
+A { text-decoration: none; }
+A:visited { color: blue; font-style: italic; }
+A:hover { text-decoration: underline; }
+
+#ab { margin-top: 20px; margin-left: 40px; }
+
+#content { margin-top: 10px; margin-bottom: 10px; }

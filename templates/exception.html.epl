@@ -1,0 +1,32 @@
+% use Data::Dumper ();
+% my $self = shift;
+% my $s = $self->stash;
+% my $e = delete $s->{exception};
+% delete $s->{inner_template};
+<!html>
+<head><title>Exception</title></head>
+    <body>
+        <h3> Exception! </h3>
+        <pre><%= $e->message %></pre>
+        <pre>
+% for my $line (@{$e->lines_before}) {
+    <%= $line->[0] %>: <%== $line->[1] %>
+% }
+% if ($e->line->[0]) {
+    <b><%= $e->line->[0] %>: <%== $e->line->[1] %></b>
+% }
+% for my $line (@{$e->lines_after}) {
+    <%= $line->[0] %>: <%== $line->[1] %>
+% }
+        </pre>
+        <pre>
+% for my $frame (@{$e->stack}) {
+<%== $frame->[1] %>: <%= $frame->[2] %>
+% }
+        </pre>
+        <pre>
+%== Data::Dumper->new([$s])->Indent(1)->Terse(1)->Dump
+        </pre>
+    </body>
+</html>
+% $s->{exception} = $e;

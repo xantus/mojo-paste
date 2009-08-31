@@ -1,0 +1,15 @@
+% my $c = shift;
+% my $posts = $c->stash( 'posts' );
+<% if ( @$posts ) { %>
+<ul>
+<% foreach my $post ( @$posts ) { %>
+<li>
+    <img class="icon-show-all" src="/media/extpaste/images/icon-complete.gif"/>
+    <a href="/<%= $post->{post_id} %>/" class="post"><%== $post->{post_title} %></a> &raquo; by <%== $post->{post_name} || 'Unknown' %>
+    <div style="padding-left: 20px;"><%== $post->{post_timestamp} %></div>
+</li>
+<% } %>
+</ul>
+<% } else { %>
+    <b>No recent posts</b>
+<% } %>
